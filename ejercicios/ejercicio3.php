@@ -1,20 +1,11 @@
 <?php 
-    declare(strict_types =1);
+    const COLORS = ['black','brown','red','orange','yellow','green','blue','violet','grey','white'];
 
-    $colors = ["Black","Brown","Red","Orange","Yellow","Green","Blue","Violet","Grey","White"];
-    function colorCode(string $colorResistencia,array $arrayResistencias):int{
-        $valor = 0;
-        for($i = 0;$i < count($arrayResistencias);$i++){
-            if(strtoupper($arrayResistencias[$i]) == strtoupper($colorResistencia)){
-                $valor = $i;
-                break;
-            }
-        } 
-        return $valor;
-
+    function colorCode(string $color):int{
+        $i = array_search($color,COLORS);
+        return $i;
     }
 
-    $color = "White";
-    echo colorCode($color,$colors);
-
+    $color = "brown";
+    echo colorCode($color);
 ?>
