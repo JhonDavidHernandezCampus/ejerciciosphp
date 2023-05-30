@@ -65,14 +65,20 @@
             }
         }
         public function pintarTabla(){
-            $cant = count($this->P);
-            echo "Team \t\t\t | MP | W | D | L | P | ";
-            foreach ($this->D as $key => $value) {
-                echo "\n"   .$value."\n";
+
+            echo"Team \t\t\t  | MP | W | D | L | P | ";
+
+            foreach ($this->MP as $key => $value) {
+                echo  "\n";
+                $gan = $this->W[$key] ?? 0;
+                $empa = $this -> D[$key] ?? 0;
+                $perdi = $this-> L[$key] ?? 0;
+                $puntos = $this-> P[$key] ?? 0;
+
+                $equipo = str_pad($key , 25 ,' ',STR_PAD_RIGHT);
+                echo $equipo. ' |  '.$value.' | ' . $gan.  ' | '. $empa  .' | '.$perdi. ' | '.$puntos . ' | '; 
             }
-
-
-
+            
         }
     }
     $obj = new Tournament("Allegoric Alaskans;Blithering Badgers;win;Devastating Donkeys;Courageous Californians;draw;Devastating Donkeys;Allegoric Alaskans;win;Courageous Californians;Blithering Badgers;loss;Blithering Badgers;Devastating Donkeys;loss;Allegoric Alaskans;Courageous Californians;win");
